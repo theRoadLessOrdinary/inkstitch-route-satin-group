@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+
+	<name>Route Satin Group</name>
+	<id>maps_edge.route_satin_group</id>
+
+	<param name="help" type="description">Select one group. Each group inside it is a layer of stitching, routed on its own and kept in its turn. For each satin column, in stitch order: both rails are pointed the same way, so the column finishes at the end nearest the next column's start. Every move to the next column must stay inside the area the columns cover together and must not cross anything already stitched. When a straight jump can't, the first of these that works is used: 1. a travel path (running stitch) over area not yet stitched, then a jump; 2. a different order of the columns in that layer; 3. a trim after the column. It starts by clearing every trim in the group and the travel paths it made before. Run again in the same session, it keeps its earlier result up to the first column that was added, removed or changed, and works out the rest.</param>
+
+	<effect>
+		<object-type>all</object-type>
+		<effects-menu>
+			<submenu name="Map's Edge Tools" translatable="no">
+				<submenu name="Embroidery" translatable="no">
+					<submenu name="Satin" translatable="no" />
+				</submenu>
+			</submenu>
+		</effects-menu>
+	</effect>
+
+	<script>
+		<command location="inx" interpreter="python">route_satin_group.py</command>
+	</script>
+
+</inkscape-extension>
